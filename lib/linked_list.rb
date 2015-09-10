@@ -97,19 +97,33 @@ class LinkedList
   end
 
   def pop
-    tail_delete
-    data = tail_delete.next_node.data
-    tail_delete.next_node = nil
+    # previous_node
+    data = previous_node.next_node.data
+    previous_node.next_node = nil
     data
   end
 
-  def tail_delete
+  def previous_node
     current  = @head
-    previous = @head
+    # previous = @head
     until current.next_node.nil?
       previous = current
       current = current.next_node
     end
     previous
+  end
+
+  def find(index)
+    current = @head
+    i = 0
+    until index == i || current == nil
+      current = current.next_node
+      i += 1
+    end
+    if current == nil
+      "[No mas linkage past here]"
+    else
+      current.data
+    end
   end
 end

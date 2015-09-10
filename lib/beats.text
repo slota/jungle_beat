@@ -111,11 +111,13 @@ class LinkedListTest < Minitest::Test
     assert_equal "tyler", node.tail_data
   end
 
-  def test_it_finds_kewl_things
-    node = LinkedList.new("head")
-    node.append("second")
-    node.append("third")
-    assert_equal "second", node.find(1)
-  end
+
+  # def test_it_gets_all_the_nodes
+  #   node = LinkedList.new("first node")
+  #   node.append("jersey mike second node")
+  #   node.append("tangarang third node")
+  #   assert_equal "#<Node:0xXXXXXX @data='first node', @next_node=#<Node:0xXXXXXX @data='jersey mike second node', @next_node=#<Node:0xXXXXXX @data='tangarang third node', @next_node=nil>>>", node.all_nodes
+  # end
+
 
 end
