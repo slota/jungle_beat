@@ -1,4 +1,4 @@
-require 'linked_list'
+require_relative 'linked_list'
 
 class JungleBeat
 
@@ -18,8 +18,9 @@ class JungleBeat
     beats
   end
 
-  def play
-    "`say -r 500 -v Boing #{beats.head.data}`"
+  def play(sound_speed = 500)
+    `say -r "#{sound_speed}" -v Boing "#{beats.head.data}"`
+    beats.head.data
   end
 
   def all
@@ -87,5 +88,9 @@ class JungleBeat
       index += 1
     end
     array.join(" ")
+  end
+
+  def rate(speed)
+    speed
   end
 end
